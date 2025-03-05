@@ -35,9 +35,9 @@ n = int(sys.argv[1])
 num_list = [int(s) for s in input('Podaj liczby całkowite oddzielone spacjami: \n').split()]
 
 min = 0
-max = len(num_list) #//2
+max = len(num_list)-1
 result = bin_search(n,num_list,min,max)
 
 if result != -1:
-    print('Indeks ', n, ' w posortowanej rosnąco liście: ', result)
+    print('Indeks liczby ', n, ' w posortowanej rosnąco liście: ', result)
 
