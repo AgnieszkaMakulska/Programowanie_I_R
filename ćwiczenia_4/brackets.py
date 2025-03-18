@@ -19,18 +19,20 @@ def fix_brackets(s):
         if char == '(':
             open_count += 1
         elif char == ')':
-            if open_count > 0:
-                open_count -= 1
-            else:
-                close_count += 1
-    return open_count + close_count
+            close_count += 1
+    return open_count - close_count
 
 
 if sys.argv[1] == 'check':
     print(is_balanced(sys.argv[2]))
 
 elif sys.argv[1] == 'fix':
-    print('Trzeba dopisać ', fix_brackets(sys.argv[2]), 'nawiasów')
+    if fix_brackets(sys.argv[2]) > 0:
+        print('Trzeba dodać ', fix_brackets(sys.argv[2]), 'nawiasów )')
+    elif fix_brackets(sys.argv[2]) < 0: 
+        print('Trzeba dopisać ', -fix_brackets(sys.argv[2]), 'nawiasów (')
+    elif fix_brackets(sys.argv[2]) == 0:
+        print('Nawiasy są poprawne')
 
 
 else:
