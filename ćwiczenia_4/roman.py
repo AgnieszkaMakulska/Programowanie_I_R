@@ -23,7 +23,7 @@ if sys.argv[1] == 'r':
     for (roman, val) in roman_numbers:
         num = x // val  # ile razy val mieści się w x
         result.append(roman * num) # dodajemy str roman powtórzoną num razy
-        x = x % val  # reszta z dzielenia n przez val
+        x = x % val  # reszta z dzielenia x przez val
 
     print(''.join(result))
 
